@@ -1,0 +1,51 @@
+{
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/root/home",
+      "style": {
+        "navigationBarTitleText": "beansmile-uniapp-boilerplate",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pages/extra",
+      "pages": [
+        {
+          "path": "web-site"
+        },
+        {
+          "path": "custom-page"
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "beansmile-uniapp-boilerplate",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "common-(.*)": "@/components/common/$1.vue",
+      "custom-(.*)": "@/components/custom/$1.vue"
+    }
+  },
+  "condition": {
+    "current": 0,
+    "list": [
+      {
+        "name": "首页",
+        "path": "pages/root/home"
+      },
+      {
+        "name": "自定页面",
+        "path": "pages/extra/custom-page"
+      }
+    ]
+  }
+}

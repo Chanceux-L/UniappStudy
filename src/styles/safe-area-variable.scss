@@ -1,0 +1,10 @@
+/* iOS 安全区域 兼容 */
+$safe-area-inset-bottom: 0px;
+
+@supports (bottom: constant(safe-area-inset-bottom)) {
+  $safe-area-inset-bottom: constant(safe-area-inset-bottom) !global; /* 兼容 iOS < 11.2 */
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+  $safe-area-inset-bottom: env(safe-area-inset-bottom) !global; /* 兼容 iOS >= 11.2 */
+}

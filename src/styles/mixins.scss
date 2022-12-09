@@ -1,0 +1,18 @@
+@mixin text-overflow($line: 1) {
+  /* stylelint-disable value-no-vendor-prefix */
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  word-break: break-all;
+  /* stylelint-enable value-no-vendor-prefix */
+}
+
+/*
+ * 默认值单位设为 rpx 只为绕过 loader 对 css 压缩的规则, 因为 max 方法无法处理不同单位的值
+ * 如果传入的 padding > 0 , 则需要传入带上 px 单位的值
+ */
+@mixin padding-bottom-safe-area($padding: 0rpx) {
+  padding-bottom: Max(#{$padding}, $safe-area-inset-bottom);
+}
